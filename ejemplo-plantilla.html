@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Meta tags rqueridos -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <title>Ejemplos de openCV.</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">OpenCV Visión Por Computadora.</a>
+        <h1 class="col-md-10">Ejemplo 2. Carga simple de webcam</h1>
+    </nav>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul id="menu" class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="#">Ejemplo 1. Carga Básica de Imagen</a></li> <!-- Hagan el enlace de su ejercicio anterior -->
+                        <li class="nav-item"><a class="nav-link" href="ejemplo2.html">Ejemplo 2. Carga Básica de WebCam</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+                
+            <div class="row">
+                    <div class="col">
+                        <div id="status" class="alert alert-primary" role="alert"><img src="img/ajax-loader.gif" /> Cargando OpenCV...</div>
+                    </div>
+                </div>
+                
+                <!--área de trabajo-->
+                
+            </main>
+        </div>
+    </div>
+
+    
+    <!-- jQuery Primero, Luego Popper.js, despues Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- OPENCV -->
+    <script async="" src="js/opencv.js" type="text/javascript" onload="onOpenCvReady();" onerror="onOpenCvError();"></script>
+
+    <script type="text/javascript">
+
+        
+
+
+
+        function onOpenCvReady() { // eslint-disable-line no-unused-vars
+            document.getElementById('status').innerHTML = '<b>OpenCV.js esta listo</b>.';
+            
+            
+        }
+        
+        function onOpenCvError() { // eslint-disable-line no-unused-vars
+            let element = document.getElementById('status');
+            element.setAttribute('class', 'err');
+            element.innerHTML = 'falló al carga de opencv.js';
+        }
+
+        </script>
+  </body>
+</html>
