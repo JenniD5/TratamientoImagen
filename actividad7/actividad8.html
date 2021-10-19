@@ -52,6 +52,7 @@
                             <option value="1">Threshold</option>
                             <option value="2">Gaussian Blur</option>
                             <option value="3">Canny</option>
+                            <option value="4">Equalize histogram</option>
 
                         </select>
                         <br>
@@ -137,6 +138,10 @@
 
                         cv.Canny(mat, mat_result,value1,value2,val_apertura);
 
+                        break;}
+                    case 4:{
+                            cv.cvtColor(mat, mat, cv.COLOR_BGR2GRAY);
+                            cv.equalizeHist(mat, mat_result);
                         break;}
                 }
 
