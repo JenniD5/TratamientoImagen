@@ -27,6 +27,8 @@
                             <li class = "nav-item"><a class="nav-link" href= "index.html">Ejemplo 1. Carga Básica de Imagen </a></li>
                             <li class = "nav-item"><a class="nav-link" href= "index2.html">Ejemplo 2. Carga Básica de WebCam </a></li>
                             <li class = "nav-item"><a class="nav-link" href= "index3.html">Ejemplo 3. Proceso Básico de Imagen </a></li>
+                            <li class = "nav-item"><a class="nav-link" href= "BN.html">Ejemplo 4. Blanco y negro </a></li>
+                            <li class = "nav-item"><a class="nav-link" href= "actividad8.html">Ejemplo 5. Filtros</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -53,6 +55,7 @@
                             <option value="2">Gaussian Blur</option>
                             <option value="3">Canny</option>
                             <option value="4">Equalize histogram</option>
+                            <option value="5">Blanco y negro</option>
 
                         </select>
                         <br>
@@ -78,6 +81,7 @@
                             <input type="range" class="custom-range" min="3" max="7" value="3", step="2", id="value_o3">
 
                         </div>
+               
 
 
 
@@ -143,6 +147,14 @@
                             cv.cvtColor(mat, mat, cv.COLOR_BGR2GRAY);
                             cv.equalizeHist(mat, mat_result);
                         break;}
+                    case 5:
+                    {
+                        let mat = cv.imread(imgElement);
+                        cv.cvtColor(mat, mat, cv.COLOR_BGR2GRAY);
+                        cv.imshow('canvasOutput', mat);
+                        mat.delete();
+
+                    break;}
                 }
 
                 cv.imshow('canvasOutput', mat_result);
